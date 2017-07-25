@@ -1,0 +1,32 @@
+{
+  "name": "nodejwt",
+  "version": "1.0.0",
+  "description": "Easy repo for new learner to understand JWT mechanism",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuadajip/nodejwt.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "JWT"
+  ],
+  "author": "fuadajip",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuadajip/nodejwt/issues"
+  },
+  "homepage": "https://github.com/fuadajip/nodejwt#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.11.4",
+    "morgan": "^1.8.2"
+  }
+}
