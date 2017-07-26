@@ -24,6 +24,21 @@ var userController = {
                 res.status(200).json({ status: false, msg: 'No user found' });
             }
         })
+    },
+    findOne: (req, res) => {
+        var userData = new userModel({
+            name: req.body.name,
+            password: req.body.password
+        });
+
+        console.log(userData);
+        userService.findOne(userData, (callback) => {
+            if (callback.status) {
+                res.status(200).json(callback);
+            } else {
+                res.status(200).json(callback);
+            }
+        })
     }
 }
 

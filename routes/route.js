@@ -4,4 +4,5 @@ var userController = require('../controllers/user');
 
 router.get('/seeder', userController.setup);
 router.get('/user', userController.getAll);
+router.post('/authenticate', userController.findOne);
 module.exports = router;

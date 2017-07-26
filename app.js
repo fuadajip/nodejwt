@@ -15,8 +15,6 @@ db.once('open', function() {
     console.log("Connected to database");
 });
 
-// set super Secret
-app.set('superSecret', process.env.SECRET);
 // use logger to log transaction
 app.use(logger('dev'));
 // use body parser so we can get info from POST and/or URL parameters
