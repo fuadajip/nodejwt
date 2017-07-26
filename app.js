@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
+var routerApp = require('./routes/route');
+
 require('dotenv').config();
 
 mongoose.connect(process.env.DB_HOST);
@@ -13,6 +15,7 @@ db.once('open', function() {
     console.log("Connected to database");
 });
 
+// set super Secret
 app.set('superSecret', process.env.SECRET);
 // use logger to log transaction
 app.use(logger('dev'));
@@ -21,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // routes
-app.use('/', (req, res) => { res.status(200).json({ status: true, msg: "Hello World" }) });
+app.use('/api', routerApp);
+
 
 app.use((req, res, next) => {
     var err = new Error('Not Found');
