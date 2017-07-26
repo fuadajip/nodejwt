@@ -5,6 +5,15 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 require('dotenv').config();
+
+mongoose.connect(process.env.DB_HOST);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("Connected to database");
+});
+
+app.set('superSecret', process.env.SECRET);
 // use logger to log transaction
 app.use(logger('dev'));
 // use body parser so we can get info from POST and/or URL parameters
